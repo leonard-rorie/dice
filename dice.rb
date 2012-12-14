@@ -37,7 +37,7 @@ while (player1_score <final_score) and (player2_score <final_score)
 end
 
 if player1_score <player2_score
-  puts "player2 wins"
+  puts "#{$player2} wins"
   else
- puts "player1 wins"
+ puts "#{$player1} wins"
 end
