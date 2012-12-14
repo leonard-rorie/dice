@@ -2,42 +2,55 @@
 boss="leonard rorie"
 
 final_score=10
-$player1= "Jack"                       
-player1_score=0
-$player2= "Henrik"
-player2_score=0
+#$player1= "Jack"                       
+#player1_score=0
+#$player2= "Henrik"
+#player2_score=0
 player=[$player1,$player2]
 turn=0
-
+class Player
+  attr_accessor :score
+  def initialize(name)
+    @name=name
+    @score=0
+  end
+  def name
+    @name
+  end
+end
+$player1=Player.new( "Jack")
+$player2=Player.new( "Henrik")
 def throw_dice ()
   result=Random.rand(5) 
   return result+1
 end
 def player_name (x)
   if x.odd?
-    $player1
+    $player1.name
   else 
-    $player2
+    $player2.name
   end
 end
 
 x=0
-while (player1_score <final_score) and (player2_score <final_score)
+while ($player1.score <final_score) and ($player2.score <final_score)
   x+=1
   puts "Now playing: "+ player_name(x)
   r=throw_dice
   puts "score "+r.to_s
   unless x.odd?
-    player1_score +=r
-    puts "totle score "+player1_score.to_s
+    $player1.score +=r
+    puts "totle score "+$player1.score.to_s
   else 
-    player2_score +=r
-    puts "totle score "+player2_score.to_s
+    $player2.score +=r
+    puts "totle score "+$player2.score.to_s
   end   
 end
 
-if player1_score <player2_score
-  puts "#{$player2} wins"
-  else
- puts "#{$player1} wins"
+if $player1.score < $player2.score
+  puts "#{$player2.name} wins"
+else
+  puts "#{$player1.name} wins"
 end
+puts $player1.inspect
+puts $player2.inspect
