@@ -3,10 +3,11 @@ boss="leonard rorie"
 
 final_score=10
 class Player
-  attr_accessor :score
+  attr_accessor :score, :turns
   def initialize(name)
     @name=name
     @score=0
+    @turns=0
   end
   def name
     @name
@@ -36,6 +37,7 @@ while ($player1.score <final_score) and ($player2.score <final_score)
   r=throw_dice
   puts "score "+r.to_s
   player(turn).score += r
+  player(turn).turns += 1
   puts "total score " + player(turn).score.to_s
 end
 
