@@ -35,13 +35,8 @@ while ($player1.score <final_score) and ($player2.score <final_score)
   puts "Now playing: "+ player(turn).name
   r=throw_dice
   puts "score "+r.to_s
-  unless turn.odd?
-    $player1.score +=r
-    puts "totle score "+$player1.score.to_s
-  else 
-    $player2.score +=r
-    puts "totle score "+$player2.score.to_s
-  end   
+  player(turn).score += r
+  puts "total score " + player(turn).score.to_s
 end
 
 if $player1.score < $player2.score
