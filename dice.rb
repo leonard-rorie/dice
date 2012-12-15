@@ -2,12 +2,6 @@
 boss="leonard rorie"
 
 final_score=10
-#$player1= "Jack"                       
-#player1_score=0
-#$player2= "Henrik"
-#player2_score=0
-player=[$player1,$player2]
-turn=0
 class Player
   attr_accessor :score
   def initialize(name)
