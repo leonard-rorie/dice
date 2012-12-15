@@ -12,27 +12,30 @@ class Player
     @name
   end
 end
+
 $player1=Player.new( "Jack")
 $player2=Player.new( "Henrik")
+
 def throw_dice ()
   result=Random.rand(5) 
   return result+1
 end
-def player_name (x)
+
+def player(x)
   if x.odd?
-    $player1.name
+    $player1
   else 
-    $player2.name
+    $player2
   end
 end
 
-x=0
+turn=0
 while ($player1.score <final_score) and ($player2.score <final_score)
-  x+=1
-  puts "Now playing: "+ player_name(x)
+  turn+=1
+  puts "Now playing: "+ player(turn).name
   r=throw_dice
   puts "score "+r.to_s
-  unless x.odd?
+  unless turn.odd?
     $player1.score +=r
     puts "totle score "+$player1.score.to_s
   else 
@@ -46,5 +49,6 @@ if $player1.score < $player2.score
 else
   puts "#{$player1.name} wins"
 end
+
 puts $player1.inspect
 puts $player2.inspect
