@@ -17,6 +17,7 @@ end
 $player1=Player.new( "Jack")
 $player2=Player.new( "Henrik")
 
+#move dice throwing to the Player class
 def throw_dice ()
   result=Random.rand(5) 
   return result+1
