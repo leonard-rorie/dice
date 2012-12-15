@@ -21,8 +21,8 @@ def throw_dice ()
   return result+1
 end
 
-def player(x)
-  if x.odd?
+def player(turn)
+  if turn.odd?
     $player1
   else 
     $player2
