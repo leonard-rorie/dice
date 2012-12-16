@@ -20,7 +20,7 @@ class Player
 end
 
 class Game
-  #include Singleton
+  include Singleton
   attr_accessor :player, :final_score
   def initialize
     @final_score=10
@@ -57,6 +57,6 @@ class Game
   end
 end
 
-game = Game.new
+game = Game.instance
 game.play
 game.score
